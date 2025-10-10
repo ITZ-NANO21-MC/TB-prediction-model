@@ -69,7 +69,7 @@ Carga de Imagen → Preprocesamiento → Análisis IA → Resultados Explicables
 
 1. **Clonar el repositorio**
 ```bash
-git clone https://github.com/ITZ-NANO21-MC/TB-prediction-model
+git clone https://github.com/ITZ-NANO21-MC/TB-prediction-model.git
 cd TB-Detector-AI
 ```
 
