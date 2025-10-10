@@ -177,6 +177,7 @@ TB-Detector-AI/
 │   ├── model_architecture.py  # Arquitectura del modelo
 │   ├── exploratory_analysis.py # Análisis exploratorio del dataset
 │   ├── inference.py           # Inferencia del modelo
+│   ├── training_pipeline.py   # Entrenamiento
 │   ├── main.py                # Archiivo principal        
 ├── 📁 models/              
 │   ├── saved_models/           # Modelos guardados
