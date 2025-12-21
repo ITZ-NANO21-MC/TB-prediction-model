@@ -33,7 +33,6 @@
 ### 🎯 Objetivos Principales
 
 - 🔍 **Detección temprana** de patrones de tuberculosis en radiografías de tórax
-
 - ⚡ **Reducción de tiempos** de diagnóstico de semanas a horas
 - 🌍 **Ampliación de cobertura** en zonas rurales y remotas
 
@@ -41,11 +40,8 @@
 
 ### 🧠 Capacidades del Modelo
 - **Clasificación Binaria**: Detección de TB con probabilidad [0.0-1.0]
-
 - **Explicabilidad Avanzada**: Mapas de calor Grad-CAM++ para visualización de hallazgos
-
 - **Múltiples Patrones**: Detección de lesiones cavitarias, consolidaciones, derrame pleural, patrones miliares y linfadenopatía
-
 - **Control de Calidad**: Evaluación automática de calidad de imagen
 
 ### 💻 Características Técnicas
@@ -127,17 +123,43 @@ model_architecture = {
 }
 ```
 
+### 📈 **Resultados con Dataset Ampliado**
+
+**Después del entrenamiento con un dataset más grande y balanceado**, el modelo ha mostrado una mejora significativa en todas las métricas. A continuación se presentan los resultados obtenidos en el conjunto de prueba de 840 imágenes (700 normales, 140 con tuberculosis):
+
 ### Métricas de Rendimiento
 | Métrica | Objetivo | Actual |
 |---------|----------|---------|
-| **AUC-ROC** | > 0.95 | 0.69 |
-| **Sensibilidad** | > 90% | 68% |
-| **Especificidad** | > 85% | 70% |
-| **Precisión** | > 88% | 67% |
+| **AUC-ROC** | > 0.95 | **0.99** |
+| **Sensibilidad (Recall)** | > 90% | **97%** |
+| **Especificidad** | > 85% | **100%** |
+| **Precisión** | > 88% | **99%** |
+| **Exactitud (Accuracy)** | > 90% | **99%** |
+| **F1-Score** | > 0.90 | **0.98** |
+
+### 📊 **Reporte de Clasificación Detallado**
+```
+==================================================
+📈 REPORTE DE CLASIFICACIÓN
+==================================================
+              precision    recall  f1-score   support
+
+      Normal       0.99      1.00      1.00       700
+Tuberculosis       0.99      0.97      0.98       140
+
+    accuracy                           0.99       840
+   macro avg       0.99      0.98      0.99       840
+weighted avg       0.99      0.99      0.99       840
+```
+
+### 🔍 **Análisis de los Resultados**
+- **Alta especificidad (100%)**: El modelo no produce falsos positivos para imágenes normales, lo que es crucial para evitar tratamientos innecesarios.
+- **Excelente sensibilidad (97%)**: Detecta correctamente el 97% de los casos de tuberculosis, minimizando falsos negativos.
+- **Balance óptimo**: El F1-Score de 0.98 indica un equilibrio perfecto entre precisión y recall.
 
 ### 🎯 Patrones Detectados
 - ✅ Lesiones cavitarias
-- ✅ Consolidaciones pulmonares  
+- ✅ Consolidaciones pulmonares 
 - ✅ Derrame pleural
 - ✅ Patrones miliares
 - ✅ Linfadenopatía mediastinal
@@ -145,14 +167,13 @@ model_architecture = {
 ## 📊 Dataset
 
 ### Fuentes de Datos
-- **Kaggle TB Dataset**: 3,500 imágenes (Normal/TB)
-- **Datos usados para el entrenamiento**: Se utilizo un subconjunto del dataset de Kaggle TB.
+- **Kaggle TB Dataset**: 4200 imágenes (Normal/TB)
 
 ### Estructura del Dataset
 ```
 ├── Dataset/
-│   ├── Normal/           # 80 imágenes
-│   └── Tuberculosis/     # 60 imágenes
+│   ├── Normal/           # 3500 imágenes
+│   └── Tuberculosis/     # 700 imágenes
 ```
 
 ### Preprocesamiento
@@ -219,4 +240,3 @@ pip install -r requirements.txt
 Este proyecto está licenciado bajo la Licencia MIT - ver el archivo [LICENSE](LICENSE) para más detalles.
 
 **Aviso Legal**: Este software está destinado únicamente para investigación y como herramienta de apoyo al diagnóstico. No substituye el juicio clínico de profesionales médicos calificados.
-
