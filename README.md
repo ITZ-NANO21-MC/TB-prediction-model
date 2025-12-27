@@ -1,6 +1,3 @@
-Aquí está el README de TB-Detector-AI actualizado con las mejoras solicitadas:
-
-```markdown
 # 🩺 TB-Detector-AI 
 
 <div align="center">
