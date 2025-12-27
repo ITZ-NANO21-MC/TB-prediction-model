@@ -284,6 +284,5 @@ Este proyecto está licenciado bajo la Licencia MIT - ver el archivo [LICENSE](L
 **⚠️ Aviso Legal**: Este software está destinado únicamente para investigación y como herramienta de apoyo al diagnóstico. No substituye el juicio clínico de profesionales médicos calificados. Siempre consulte con un médico para diagnóstico y tratamiento.
 
 **🔬 Para uso de investigación** | **🏥 Versión de desarrollo** | **📊 Modelo con 99% de precisión**
-
 ---
 ```
